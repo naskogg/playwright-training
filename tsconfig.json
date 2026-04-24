@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": "./",
+    "outDir": "dist",
+    "types": ["node", "@playwright/test"]
+  },
+  "include": ["tests/**/*.ts", "fixtures/**/*.ts", "pages/**/*.ts", "playwright.config.ts"]
+}
