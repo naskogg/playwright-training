@@ -14,9 +14,9 @@ export default [
     },
   },
 
-  // Node.js globals for config and utility files
+  // Node.js globals for config, fixture, and pages files
   {
-    files: ['playwright.config.ts', 'utils/**/*.ts'],
+    files: ['playwright.config.ts', 'fixtures/**/*.ts', 'pages/**/*.ts'],
     languageOptions: {
       globals: globals.node,
     },

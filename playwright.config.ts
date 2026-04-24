@@ -18,8 +18,13 @@ export default defineConfig({
 
   projects: [
     {
+      name: 'auth-setup',
+      testMatch: 'tests/auth/auth.setup.ts',
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['auth-setup'],
     },
 
     // {
