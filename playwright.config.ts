@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
+import { AUTH_FILE } from './utils/constants';
 import path from 'path';
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
@@ -22,8 +23,14 @@ export default defineConfig({
       testMatch: 'tests/auth/auth.setup.ts',
     },
     {
-      name: 'chromium',
+      name: 'chromium-no-auth',
+      testMatch: 'tests/auth/**/*.spec.ts',
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'chromium',
+      testIgnore: 'tests/auth/**/*.spec.ts',
+      use: { ...devices['Desktop Chrome'], storageState: AUTH_FILE },
       dependencies: ['auth-setup'],
     },
 

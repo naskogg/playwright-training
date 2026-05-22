@@ -8,8 +8,9 @@
     "types": ["node", "@playwright/test"],
     "paths": {
       "@pages/*": ["./pages/*"],
-      "@fixtures/*": ["./fixtures/*"]
+      "@fixtures/*": ["./fixtures/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
-  "include": ["tests/**/*.ts", "fixtures/**/*.ts", "pages/**/*.ts", "playwright.config.ts"]
+  "include": ["tests/**/*.ts", "fixtures/**/*.ts", "pages/**/*.ts", "utils/**/*.ts", "playwright.config.ts"]
 }

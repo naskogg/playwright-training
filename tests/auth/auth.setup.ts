@@ -1,9 +1,11 @@
 import { test as setup } from '@playwright/test';
-
-const authFile = 'auth.json';
+import { LoginPage } from '@pages/LoginPage';
+import { AUTH_FILE } from '@utils/constants';
+import { VALID_USER } from '@utils/users';
 
 setup('authenticate', async ({ page }) => {
-  await page.goto('/login');
-
-  await page.context().storageState({ path: authFile });
+  const loginPage = new LoginPage(page);
+  await loginPage.visit();
+  await loginPage.login(VALID_USER.username, VALID_USER.password);
+  await page.context().storageState({ path: AUTH_FILE });
 });
